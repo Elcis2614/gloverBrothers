@@ -45,7 +45,7 @@ const NavBar = function () {
 			<div class={opened ? "headerItems opened" : "headerItems closed"}>
 					<nav id="navBar">
 						<ul class="headerList">
-							<li><NavLink to="/" onClick={ () => {navClicked(false)}}><p>Home</p></NavLink></li>
+							<li><NavLink to="/gloverBrothers/home" onClick={ () => {navClicked(false)}}><p>Home</p></NavLink></li>
 							<li><>
 									<div class={portoClicked ? "dropList activePorto" : "dropList"} >
 										<div class="dropDown" onClick={handlePorto}>
@@ -54,14 +54,14 @@ const NavBar = function () {
 										</div>
 										<div class={openPorto ? "listElements open " : "listElements closed"}>
 										<div class="item" onClick={ () => {navClicked(true)}}>
-												<NavLink to="portofolio/residentials">
+												<NavLink to="/gloverBrothers/portofolio/residentials">
 													<div class="node"><FaHome class="icons" /></div>
 													<div class="node">Residential</div>
 												</NavLink>
 											</div>
 											<div class="separator"></div>
 											<div class="item" onClick={ () => {navClicked(true)}}>
-												<NavLink to="portofolio/commercials">
+												<NavLink to="/gloverBrothers/portofolio/commercials">
 													<div class="node"><FaBuilding class="icons" /></div>
 													<div class="node">Commercial</div>
 												</NavLink>
@@ -70,9 +70,9 @@ const NavBar = function () {
 								</div>
 								</>
 							</li>
-							<li><NavLink to="/service" onClick={ () => {navClicked(false)}}><p>Services</p></NavLink></li>
-							<li><NavLink to="/careers" onClick={ () => {navClicked(false)}}><p>Careers</p></NavLink></li>
-							<li><NavLink to="/about" onClick={ () => {navClicked(false)}}><p>About</p></NavLink></li>
+							<li><NavLink to="/gloverBrothers/service" onClick={ () => {navClicked(false)}}><p>Services</p></NavLink></li>
+							<li><NavLink to="/gloverBrothers/careers" onClick={ () => {navClicked(false)}}><p>Careers</p></NavLink></li>
+							<li><NavLink to="/gloverBrothers/about" onClick={ () => {navClicked(false)}}><p>About</p></NavLink></li>
 						</ul>
 					</nav>
 					<div class="contactContainer" onClick={handleContact}>

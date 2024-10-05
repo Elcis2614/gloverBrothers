@@ -10,30 +10,29 @@ import MaintenancePage from './pages/Maintenance';
 
 function App() {
     const routes = [
-        { path: '/gloverBrothers', element: <HomePage /> },
-        { path: '/', element: <HomePage /> },
+        { path: '/gloverBrothers/home', element: <HomePage /> },
         {
-            path: 'portofolio/commercials', element:
+            path: '/gloverBrothers/portofolio/commercials', element:
                 <Commercials title="Commercial Projects"/>
         },
         {
-            path: 'portofolio/residentials', element:
+            path: '/gloverBrothers/portofolio/residentials', element:
                 <ResidentialPage/>
         },
         {
-            path: 'portofolio/commercials/:id', element:
+            path: '/gloverBrothers/portofolio/commercials/:id', element:
                 <ProductPage/>
         },
         {
-            path: '/maintenance', element: <MaintenancePage/>
+            path: '/gloverBrothers/maintenance', element: <MaintenancePage/>
         },
         {
-            path: '/careers', element: <MaintenancePage />
+            path: '/gloverBrothers/careers', element: <MaintenancePage />
         },
         {
-            path: '/service', element: <MaintenancePage />
+            path: '/gloverBrothers/service', element: <MaintenancePage />
         },
-        { path: '/about', element: <MaintenancePage />}
+        { path: '/gloverBrothers/about', element: <MaintenancePage />}
     ];
   return (
       <div className="App">

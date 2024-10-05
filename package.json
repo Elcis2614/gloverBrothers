@@ -1,7 +1,7 @@
 {
   "name": "glovers",
   "version": "0.1.0",
-  "homepage":  "https://elcis2614.github.io/gloverBrothers",
+  "homepage":  "https://elcis2614.github.io/gloverBrothers/home",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

@@ -9,14 +9,14 @@ const data = [
 		title2: "Landscape construction",
 		message: <>+ 100 years combined experience <br />from our leadership team.<br />We make your life easy.</>,
 		btnLabel: "EXPLORE",
-		link: "portofolio/commercials/",
+		link: "/gloverBrothers/portofolio/commercials/",
 		src: "https://static.wixstatic.com/media/e2789b_1d0759d65938495dac13e9bf388fb1fc~mv2.jpg/v1/crop/x_0,y_893,w_4032,h_2131/fill/w_1225,h_648,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/King%20Edward%20Hotel%20(3)%20(1)_JPG.jpg",
 	},
 	{
 		title1: "Leader in",
 		message: <>Beautiful Landscapes.<br/>Fearless Innovation.<br/>Uncompromising Integrity<br/></>,
 		btnLabel: "VIEW PROJECTS",
-		link: "portofolio/residentials/",
+		link: "/gloverBrothers/portofolio/residentials/",
 		src: "https://static.wixstatic.com/media/e2789b_5cb0e77bc70a4769a26b99db90c3c28f~mv2.jpg/v1/fill/w_480,h_376,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e2789b_5cb0e77bc70a4769a26b99db90c3c28f~mv2.jpg",
 	},
 
@@ -24,14 +24,14 @@ const data = [
 		title1: "Residential",
 		message: <>We provide executive service.<br/> Easy to deal with.<br /> Driven by experience."</>,
 		btnLabel: "EXPLORE",
-		link: "portofolio/residentials",
+		link: "/gloverBrothers/portofolio/residentials",
 		src: "https://static.wixstatic.com/media/e2789b_967b3e8ab19e4836a46c46224a21a779~mv2.jpg/v1/fill/w_720,h_376,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e2789b_967b3e8ab19e4836a46c46224a21a779~mv2.jpg",
 	},
 	{
 		title1: "Commercial",
 		message: <>We provide executive service.<br /> Easy to deal with.<br /> Driven by experience."</>,
 		btnLabel: "VISIT",
-		link: "portofolio/commercials",
+		link: "/gloverBrothers/portofolio/commercials",
 		src: "https://static.wixstatic.com/media/e2789b_1d0759d65938495dac13e9bf388fb1fc~mv2.jpg/v1/crop/x_0,y_893,w_4032,h_2131/fill/w_1225,h_648,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/King%20Edward%20Hotel%20(3)%20(1)_JPG.jpg",
     }
 ];

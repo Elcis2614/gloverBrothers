@@ -35,7 +35,7 @@ function Commercials({ title }) {
                 {
                     Object.values(projects).map((element) => (
                         <div class="card">
-                            <NavLink to={`/portofolio/commercials/${element.id}`}>
+                            <NavLink to={`/gloverBrothers/portofolio/commercials/${element.id}`}>
                                 <div class="imgContainer">
                                     <img src={element.profile} />
                                     <div class="cardLink" >See more</div>

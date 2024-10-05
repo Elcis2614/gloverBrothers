@@ -49,10 +49,10 @@ function PubSection({ flip = false }) {
             <div class="pubSection">
                 <div class="commercial card right">
                     <ImgComp src={data[0].image}/>
-                    <DescriptComp title="Residential" content={data[0].message} link={'portofolio/residentials'}/>
+                    <DescriptComp title="Residential" content={data[0].message} link={'/gloverBrothers/portofolio/residentials'}/>
                 </div>
                 <div class="commercial card left">
-                    <DescriptComp title="Commercial" content={data[1].message} link={'portofolio/commercials'}/>
+                    <DescriptComp title="Commercial" content={data[1].message} link={'/gloverBrothers/portofolio/commercials'}/>
                     <ImgComp src={data[1].image} />
                 </div>
             </div>

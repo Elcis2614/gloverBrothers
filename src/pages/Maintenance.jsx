@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 const availables = [
     {
         title: 'Home Page',
-        link: '/'
+        link: '/gloverBrothers/home'
     },
     {
         title: 'Commercial projects',
-        link: '/portofolio/commercials'
+        link: '/gloverBrothers/portofolio/commercials'
     },
     {
         title: 'Residential projects',
-        link: '/portofolio/residentials',
+        link: '/gloverBrothers/portofolio/residentials',
     },
 
 ];
