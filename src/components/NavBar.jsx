@@ -45,7 +45,7 @@ const NavBar = function () {
 			<div class={opened ? "headerItems opened" : "headerItems closed"}>
 					<nav id="navBar">
 						<ul class="headerList">
-							<li><NavLink to="/gloverBrothers/home" onClick={ () => {navClicked(false)}}><p>Home</p></NavLink></li>
+							<li><NavLink to="/gloverBrothers" onClick={ () => {navClicked(false)}}><p>Home</p></NavLink></li>
 							<li><>
 									<div class={portoClicked ? "dropList activePorto" : "dropList"} >
 										<div class="dropDown" onClick={handlePorto}>

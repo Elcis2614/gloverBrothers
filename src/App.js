@@ -10,7 +10,7 @@ import MaintenancePage from './pages/Maintenance';
 
 function App() {
     const routes = [
-        { path: '/gloverBrothers/home', element: <HomePage /> },
+        { path: '/gloverBrothers', element: <HomePage /> },
         {
             path: '/gloverBrothers/portofolio/commercials', element:
                 <Commercials title="Commercial Projects"/>
