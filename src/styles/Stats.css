@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+.stats {
+    display: flex;
+    left: 30vw;
+    position: absolute;
+    bottom: 15%;
+    transform: translateY(50px);
+}
+.stats .item{
+    color: #0F1E73;
+}
+.stats .item:first-child{
+   
+}
+.numb {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2em;
+    text-align: left;
+}
+
+.stats .item .txtContent {
+    width: 150px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    padding-top: 14px;
+    font-size: .8em;
+    opacity: 0;
+    filter: blur(10px);
+    animation: statTextShow 0.2s linear 1 forwards;
+    animation-delay: 1.2s;
+}
+ @keyframes statTextShow{
+     to{
+         font-size: 1em;
+         opacity: 1;
+         filter: blur(0);
+     }
+ }
+
+@media screen and (max-width: 1000px) {
+    .stats {
+        left: 0;
+        width: 100%;
+        justify-content: space-around;
+
+    }
+    .stats .item .txtContent{
+        width: 100px;
+        width: fit-content;
+    }
+    .numb{
+        font-size: 1.5em;
+    }
+}

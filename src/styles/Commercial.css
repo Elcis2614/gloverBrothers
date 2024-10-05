@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+:root {
+    --bgColor1: #EAEAEA;
+    --bgWhite1: #ffffff;
+    --bgCard: #CCD1D1;
+    --txtBlue1: #1B1075;
+    --txtBlack1: #101010;
+    --colorYellow1: #CBA43F;
+    --top_margin: 12vh;
+}
+.cardsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(12vh);
+}
+.cardsSection .title:first-child{
+    font-size: 3em;
+    margin: 24px 0;
+    font-family: "Gowun Batang", serif;
+    color: #0F1E73;
+    font-weight: 600;   
+}
+.cardsSection .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, auto));
+    width: 90vw;
+    gap: 2em;
+}
+.cardsSection .cardsContainer .card {
+    text-align: left;
+    border-radius: 5px;
+    border: 2px solid var(--bgCard);
+    padding-bottom: 32px;
+}
+.cardsSection .cardsContainer .card a{
+    text-decoration: none;
+}
+.cardsSection .cardsContainer .card .imgContainer {
+    width: 100%;
+    height: 30vh;
+    position: relative;
+}
+.cardsSection .cardsContainer .card .imgContainer img {
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.cardsSection .cardsContainer .card .imgContainer .cardLink {
+    position: absolute;
+    color: white;
+    font-size: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    z-index:2;
+    align-content: center;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all ease .3s;
+    text-decoration: underline;
+}
+.cardsSection .cardsContainer .card .imgContainer .cardLink:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+}
+
+.cardsSection .cardsContainer .card a .title {
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    margin-top: 16px;
+    cursor: pointer;
+    width: fit-content;
+    display: block;
+    position: relative;
+    color: #1B1075;
+}
+.cardsSection .cardsContainer .card a .title::before{
+    content: ' ';
+    display: block;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    width: 0;
+    background-color: var(--colorYellow1);
+    position: absolute;
+    transition: all .5s ease;
+    transform: translateY(3px);
+}
+
+@media (hover: hover){
+    .cardsSection .cardsContainer .card .title:hover::before{
+        width: 90%;
+        left: 5%;
+        right: 0;
+    }
+}
+.cardsSection .cardsContainer .card .title,
+.cardsSection .cardsContainer .card .caption{
+    padding: 0 12px;
+}
+
+.cardsSection .cardsContainer .card .caption{
+    padding-top: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 1000px){
+    .cardsSection .cardsContainer {
+        grid-template-columns: 90vw;
+    }
+    .cardsSection .cardsContainer .card .imgContainer .cardLink{
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+    }
+}

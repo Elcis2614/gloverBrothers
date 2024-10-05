@@ -1,0 +1,2 @@
+Loading page: replace Logo with correct picture, remove :before on container
+BannerVieux: use backgend data

@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --bgColor1: #EAEAEA;
+    --bgColor2: #909497;
+    --txtBlue1: #0014B7;
+    --txtBlack1: #283747;
+    --navWhite: #ffffff;
+    --colorYellow1: #CBA43F;
+    --header_height: 12vh;
+    --baseFontSize: 14x;
+    --primary-color: #f6f6f6;
+    --secondary-color: #E3E3E3;
+    --color-3: #FFFDFC;
+    --color-blue-1: #274C77;
+    --color-blue-2: #172A3A;
+}
+
+.row_elements, .headerItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateX(-12px);
+}
+
+.row_elements .opened{
+    visibility: visible;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: var(--header_height);
+    z-index: 160;
+    display: flex;
+    padding: 0 5vw 0 0;
+}
+.dropList{
+    position: relative;
+}
+.dropDown{
+    display: flex;
+}
+.dropDow .icon{
+    transform: translateY(10%);
+}
+.scrolled {
+    background: var(--color-3);
+    border-bottom: 1px solid var(--colorYellow1);
+}
+
+.row_elements .logo {
+    height: 64px;
+    transform: translateX(50px);
+    width: fit-content;
+    transition: all .2s ease;
+}
+
+.logo img{
+    height: 100%; 
+}
+
+.scrolled .logo {
+    animation: scroll .3s linear 1 forwards;
+}
+
+@keyframes scroll{
+    to {
+        height: 54px;
+    }
+}
+.headerList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    font-family: Poppins light;
+}
+
+.headerList li a {
+    text-decoration: none;
+    color: var(--txtBlack1);
+}
+
+.headerList > li {
+    position: relative;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: 0px;
+    margin-left: 32px;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.contactContainer {
+    cursor: pointer;
+    transition: .9s ease all;
+}
+
+.contactContainer .contactBtn {
+    height: 4vh;
+    width: fit-content;
+    border: 2px solid var(--colorYellow1);
+    box-shadow: 0 4px 8px 0 rgb(203, 164, 63, 0.2), 0 4px 8px 0 rgb(203, 164, 63, 0.19);
+    border-radius: 5px;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: var(--colorYellow1);
+    padding: 0 4px;
+    
+}
+
+.dropList .listElements {    
+    border: 1px solid var(--secondary-color);
+}
+.dropList .listElements .item .node:first-child{
+    padding-right: 12px;
+    transform: translateY(10%)
+}
+.contactContainer .contactElements {
+    border: 1px solid var(--colorYellow1);
+    box-shadow: 0 4px 8px 0 rgb(203, 164, 63, 0.2), 0 4px 8px 0 rgb(203, 164, 63, 0.19);
+    right: 0;
+}
+.contactContainer .contactElements,
+.dropList .listElements {
+    position: absolute;
+    display: grid;
+    gap: 0.5em;
+    padding: 12px 18px 12px 18px;
+    border-radius: 5px;
+    background: var(--primary-color);
+    visibility: hidden;
+}
+
+.separator
+{
+    width: 100%;
+    background: var(--bgColor2);
+    height: 2px;
+}
+
+.contactContainer .contactElements .item a,
+.dropList .item a{
+    text-decoration: none;
+    color: var(--txtBlack1);
+    font-family: "Poppins", sans-serif;
+    font-size: .8em;
+    font-weight: 300;
+    width: 100%;
+    display: flex;  
+    position: relative;
+}
+
+.contactContainer .contactElements .item a .icons  {
+    position: absolute;
+    transform: translateY(25%);
+}
+
+.contactContainer .contactElements .item a .node:first-child{
+    padding-right: 24px;
+}
+
+@media (hover: hover){
+    .contactContainer:hover .contactElements,
+    .dropList:hover .listElements {
+        visibility: visible;
+    }
+    
+    .contactContainer:hover .contactBtn {
+        border: 2px solid var(--navWhite);
+        box-shadow: none;
+    }
+    .scrolled .headerItems .contactContainer:hover .contactBtn {
+        border: 2px solid var(--bgColor1);
+    }
+    .contactContainer .contactElements .item:hover,
+    .dropList .listElements .item a:hover{
+        font-weight: 600;
+    }
+}
+
+#navBar {
+    align-items: center;
+    padding-right: 24px;
+    color: var(--txtBlack1);
+}
+
+
+.controleBtn {
+    display: none;
+}
+a.acitve{
+    color: red;
+}
+
+li .active > p,
+li .activePorto,
+li .active .dropList .dropDow {
+    color: #0D00A4;
+    font-weight: 600;
+}
+@media screen and (max-width: 1000px) {
+    .row_elements {
+        background: var(--bgColor1);
+    }
+
+    .logo {
+        position: absolute;
+        height: 54px;
+        right: 50%;
+    }
+
+    .headerItems {
+        position: absolute;
+        top: var(--header_height);
+        left: 0;
+        width: 80vw;
+        height: 100vh;
+        background: var(--bgColor1);
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding-left: 7%;
+    }
+
+    #navBar .headerList li {
+        box-sizing: content-box;
+    }
+
+    .headerList li a p {
+        margin: 0;
+    }
+
+    #navBar {
+        padding: 18px 0;
+    }
+
+    #navBar .headerList {
+        flex-direction: column;
+        gap: 2em;
+        padding: 0;
+        align-items: start;
+    }
+
+    .row_elements .controleBtn {
+        display: block;
+        padding: 0;
+        font-size: 24px;
+        position:absolute;
+        left: 8%;
+    }
+
+    .row_elements > .opened {
+        visibility: visible;
+        animation: showNav .4s linear 1 forwards;
+        transform: translateX(-100%);
+    }
+
+    @keyframes showNav {
+        to {
+            transform: translateX(0);
+        }
+    }
+    .row_elements > .closed {
+        transform: inherit;
+        animation: closeNav .4s linear 1 forwards;
+    }
+    @keyframes closeNav {
+        to {
+            transform: translateX(-100%);
+        }
+    }
+    .contactContainer {
+        position: relative;
+        transform: translateX(25%);
+    }
+    .contactContainer .contactBtn {
+        height: 4vh;
+        border: none;
+        box-shadow: none;
+        font-size: 1rem;
+    }
+
+    .contactContainer .contactElements,
+    .dropList .listElements{
+        position: relative;        
+        border: none;
+        box-shadow: none;
+        padding: 12px 0;
+        background-color: transparent;
+        visibility: visible;
+        transform: translateX(20%);
+    }
+    .dropList .listElements {
+        position: relative;
+    }
+    .contactContainer .contactElements .item a {
+        font-weight: 500;
+    }
+    .contactContainer .opened,
+    .dropList .opened{
+        display: grid;
+        visibility: visible;
+    }
+    .contactContainer .closed,
+    .dropList .closed{
+        display: none;
+        visibility: hidden;
+    }
+}

@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import HomePage from './pages/HomePage';
+import Commercials from './pages/Commercial';
+import ResidentialPage from './pages/ResidentialPage';
+import ProductPage from './pages/ProductPage';
+import AboutPage from './pages/AboutPage';
+import NavBar from './components/NavBar';
+import MaintenancePage from './pages/Maintenance';
 
 function App() {
+    const routes = [
+        { path: '/gloverBrothers', element: <HomePage /> },
+        { path: '/', element: <HomePage /> },
+        {
+            path: 'portofolio/commercials', element:
+                <Commercials title="Commercial Projects"/>
+        },
+        {
+            path: 'portofolio/residentials', element:
+                <ResidentialPage/>
+        },
+        {
+            path: 'portofolio/commercials/:id', element:
+                <ProductPage/>
+        },
+        {
+            path: '/maintenance', element: <MaintenancePage/>
+        },
+        {
+            path: '/careers', element: <MaintenancePage />
+        },
+        {
+            path: '/service', element: <MaintenancePage />
+        },
+        { path: '/about', element: <MaintenancePage />}
+    ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+          <NavBar />
+          <Routes>
+              {
+                  routes.map((route, index) => {
+                      return <Route key={index} path={route.path} element={route.element}/>
+                  })
+              }
+          </Routes>
     </div>
   );
 }

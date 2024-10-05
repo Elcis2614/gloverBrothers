@@ -1,0 +1,197 @@
+:root {
+    --color-blue-1: #EAEAEA;
+    --bgWhite1: #ffffff;
+    --txtBlue1: #1B1075;
+    --txtBlack1: #101010;
+    --colorYellow1: #CBA43F;
+    --top_margin: 12vh;
+    --primary-color: #FFFDFC;
+    --secondary-color: #E3E3E3;
+    --color-blue-1: #274C77;
+    --color-blue-2: #172A3A;
+}
+.pubSection {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: var(--primary-color);
+
+}
+.pubSection .card {
+    display: flex;
+    position: relative;
+    padding: 0;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.left {
+    justify-content: space-between;
+    background: linear-gradient(to right, var(--bgColor1) 15vw, var(--primary-color) 15vw);
+}
+.commercial .imgCom {
+    align-items: center;
+    position: relative;
+    padding: 0 24px;
+}
+.commercial .imgCom img {
+    height: 60vh;
+    width: 45vw;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.description{
+    position: relative;
+    width: 20vw;
+}
+
+.left .description{
+    left: 17vw;
+}
+.description h1:first-child{
+    font-size: 4em;
+    color: #1B1075;
+    letter-spacing: 8px;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    margin: 0;
+    line-height: 0;
+    padding: 18px 0;
+    position: absolute;
+}
+.right .description h1:first-child {
+    left: 10vw;
+}
+.left .description h1:first-child{
+    left: -10vw;
+}
+.description h1:nth-child(2) {
+    font-family: "Cinzel", serif;
+    padding-top: 60px;
+    color: #333333;
+    font-weight: 600;
+    font-size: 2em;
+    width: fit-content;
+}
+.description .content {
+    text-align: left;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+
+.description .btnMore {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    border-radius: 7px;
+    justify-content: end;
+    align-items: center;
+    padding: 0 5px;
+    margin-top: 16px;
+    cursor: pointer;
+    filter: drop-shadow(0 0t 0.25rem #909497);
+    transition: ease all .2s;
+    position: relative;
+}
+@media (hover: hover) {
+    .description .btnMore,
+    .left .description .btnMore:hover {
+        background: #1B1075;
+        color: white;
+    }
+    .left .description .btnMore,
+    .right .description .btnMore:hover {
+        background: var(--bgWhite1);
+        color: #1B1075;
+        font-weight: 600;
+        border: 1px solid #1B1075;
+    }
+}
+
+
+.description .btnMore .btnTxt{
+    font-size: 1.2em;
+    position: absolute;
+    top: 10%;
+    left: 7px;
+}
+.description .btnMore .btnTxt:hover{
+    font-size: 1.25em;
+}
+.pubSection .left .slider,
+.pubSection .right .slider {
+    opacity: 0;
+    filter: blur(3px);
+    animation: slidePub 1s .4s ease 1 forwards;
+}
+.pubSection .left .slider {
+    transform: translateX(150px);
+}
+.pubSection .right .slider {
+    transform: translateX(-150px);
+}
+@keyframes slidePub {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+@media screen and (max-width: 1000px) {
+    .pubSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pubSection .card {
+        width: 92vw;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 0 64px 0;
+    }
+
+    .commercial .imgCom {
+        padding: 0;
+        height: fit-content;
+        position: relative;
+    }
+    .commercial .imgCom img {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .description .content {
+        text-align: left;
+        font-size: 1.2em;
+        letter-spacing: 2px;
+    }
+    .left {
+        background: var(--bgColor1);
+    }
+    .right {
+        background: var(--bgColor1);
+    }
+    .description {
+        width: 85vw;
+        align-items: center;
+    }
+    .left .description,
+    .description h1:first-child,
+    .left .description h1:first-child {
+        left: 0;
+        padding: 0;
+    }
+    .left .description h1:first-child,
+    .description h1:first-child{
+        font-size: 2.3em;
+        position: relative;
+        line-height: normal;
+        font-weight: 700;
+        display: block;
+    }
+    .description h1:nth-child(2) {    
+        padding-top: 0;
+        font-size: 1.5em;
+    }
+
+}

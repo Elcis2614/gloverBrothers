@@ -1,0 +1,121 @@
+.loadContainer {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: #F8F8F8;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    color: #172A3A;
+    border-bottom: 5px solid black;
+}
+.loadContainer .LoadLogo {
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    height: fit-content;
+    position: absolute;
+    top: 35%;
+}
+.loadContainer .LoadLogo:before {
+    content: "";
+    background: #F8F8F8;
+    position: absolute;
+    bottom: 0;
+    height: 20%;
+    width: 100%;
+}
+.loadContainer .LoadLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+.loadContainer .loadingGif {
+    position: absolute; 
+    width: 6vw;
+    height: fit-content;
+    top: 60%;
+    z-index: 3;
+}
+.loadContainer .loadingGif img{
+    width: 100%;
+    height: 100%;
+    
+}
+.loadContainer .loadingGif .loadingTxt{
+    animation : fadeOut 1.5s infinite 1s;
+    font-weight: 600;
+}
+
+.loadContainer .loadingTitle {
+    position: absolute;
+    top: 45%;
+    height: fit-content;
+    text-shadow: 1px 1px 2px white;
+}
+.loadContainer .loadingTitle:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 100%;
+    background: #F8F8F8;
+    transform: translateY(100%);
+    z-index: 2;
+}
+.loadContainer .loadingTitle .node{
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    font-size: 5em;
+    transform: translateY(100%);
+    animation: showText .5s .1s linear 1 forwards;
+    z-index: -1;
+}
+@keyframes showText{
+    to{
+        transform: translateY(0);
+    }
+}
+.closeLoader {
+    top: 0;
+    animation: closeLoader .8s .4s linear 1 forwards;
+}
+@keyframes closeLoader{
+    to {
+        transform: translateY(-100%);
+        visibility: hidden;
+    }
+}
+.closeLoader .loadingGif .loadingTxt{
+    animation: none;
+    color: #f39c12;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1000px) {
+    .loadContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .loadContainer .LoadLogo {
+        position: relative;
+        top: auto;
+    }
+    .loadContainer .loadingGif {
+        position: relative;
+        width: 80px;
+        line-height:0;
+        top: auto;
+    }
+    .loadContainer .loadingTitle {
+        position: relative;
+        top: auto;
+    }
+    .loadContainer .loadingTitle .node {
+        font-size: 2.8em;
+    }
+}

@@ -1,0 +1,68 @@
+.maintenance {
+    height: 100vh;
+}
+.maintenance  .bakcgroundImage {
+    height: 80vh;
+    aspect-ratio: 16/9;
+    align-self: end;
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
+.maintenance  .bakcgroundImage img{    
+    height: 100%;
+}
+.maintenance  .txtContent{
+    position: absolute;
+    left: 5%;
+    top : 20%;
+    text-align: start;
+}
+
+.maintenance .txtContent span:first-child {
+    font-size: 3em;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: #5d6d7e;
+    padding-bottom: 24px;
+}
+.maintenance .txtContent span:nth-child(2){
+    font-size: 1.5em;
+    color: #abb2b9
+}
+.maintenance .txtContent .linksBox{
+    border: 1px solid #5d6d7e;
+    width: fit-content;
+    border-radius: 5px;
+    transform: translateY(24px);
+}
+.linkItem {
+    border-bottom: 1px solid #5d6d7e;
+    padding: 12px 12px;
+    cursor: pointer;
+}
+.linkItem:last-child{
+    border-bottom: none;
+}
+.linkItem .Link {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #5d6d7e;
+}
+
+@media (hover: hover){
+    .linkItem:hover,
+    .linkItem:hover .Link{
+        background: #5d6d7e;    
+        color: white;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .maintenance .bakcgroundImage {
+        display: none;
+    }
+
+    .maintenance .bakcgroundImage img {
+        height: 100%;
+    }
+}

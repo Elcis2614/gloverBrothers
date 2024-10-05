@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+:root {
+    --bgColor: #000A7B;
+    --txtColor: #CECECE;
+}
+
+footer {
+    background: var(--bgColor);
+    position: relative;
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_logo {
+    padding: 16px 0 8px 5%;
+}
+
+.footer_content{
+    display: flex;   
+    justify-content: end;
+}
+
+
+.footer_content .footer_column {
+    margin-right: 24px;
+    min-width: 16vw;
+}
+.foot_icon {    
+    transform: translateY(25%);
+    position: absolute;
+}
+.footer_content .footer_column .element {
+    position: relative;
+    display: flex;
+    gap: .5em;
+    margin-bottom: .4em;
+    vertical-align: top;
+}
+.footer_content .footer_column .element .footer_text:nth-child(2){
+    margin-left: 18px;
+}
+.footer_content .footer_column .element .footer_text{
+}
+
+.footer_column .title {
+    font-size: 1.1em;
+    color: white;
+    text-align: start;
+    font-weight: 600;
+    padding: 12px 0 8px 0;
+}
+
+
+.footer_text,
+.footer_text a{
+    font-size: 1em;
+    color: var(--txtColor);
+    text-decoration: none;
+}
+
+.footer_logo .footer_text {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 3px;
+}
+
+footer .signature{
+    position:absolute;
+    top: 99%;
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px){
+    footer {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        padding-bottom: 5vh;
+    }
+    .footer_logo {
+        padding: 16px 0 8px 0;
+    }
+    .footer_content{
+        flex-direction: column;
+        width: 90vw;
+    }
+
+    .footer_content .footer_column{
+        
+    }
+}
