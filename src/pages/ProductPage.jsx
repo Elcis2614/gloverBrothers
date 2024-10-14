@@ -3,6 +3,13 @@ import HTTPManager from '../HTTPManager.js'
 import { useParams } from 'react-router-dom';
 import Foots from '../components/Footer';
 import ModalView from '../components/Modal';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+
 import '../styles/ProductPage.css';
 import Loader from '../components/Loader';
 const BASE_URL = 'http://localhost:5000';
@@ -11,11 +18,10 @@ const httpManager = new HTTPManager(BASE_URL);
 
 function ProductPage() {
     const [project, setProject] = useState([]);
-    const [modalImg, setModal] = useState("");
-    const [modalOpened, setModalOpened] = useState(false);
     const [closeLoader, setCloseLoader] = useState(false);
     const params = useParams();
     const containerRef = useRef(null);
+    const [index, setIdenx] = useState(-1);
 
     const fetchProject = async () => {
         let prj = {};
@@ -25,11 +31,14 @@ function ProductPage() {
         } catch (err) {
             prj = [];
         }
-        setProject(prj);
-    }
-    const handleClick = (imgSrc) => {
-        setModal(imgSrc);
-        setModalOpened(true);
+        setProject({
+            ...prj,
+            illustrations: prj?.illustrations.map((item) => (
+                {
+                    src: item
+                }
+            ))
+        });
     }
     useEffect(() => {
         fetchProject();
@@ -59,18 +68,22 @@ function ProductPage() {
                 <div  class="horContainer" >
                     <div class="picContainer" ref={containerRef}>
                         {
-                            project?.illustrations?.map((item) => (
-                                <div class="imgContainer" onClick={() => { handleClick(item)}}>
-                                <img src={item} ></img>
-                            </div>
+                            project?.illustrations?.map((item,index) => (
+                                <div class="imgContainer" onClick={() => {setIdenx(index)}}>
+                                    <img src={item.src} ></img>
+                                </div>
                         ))
                     }
                     </div>
                 </div>
             </section>
-            {
-                modalOpened && <ModalView src={modalImg} setView={setModalOpened} />
-            }
+            <Lightbox
+                open={index >= 0}
+                index={index}
+                slides={project.illustrations}
+                close={() => setIdenx(-1)}
+                plugins={[Fullscreen, Thumbnails, Zoom]}
+            />
             <Foots/>
         </div>);
 }

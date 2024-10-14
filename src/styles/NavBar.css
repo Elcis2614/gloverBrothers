@@ -49,7 +49,7 @@ header {
     border-bottom: 1px solid var(--colorYellow1);
 }
 
-.row_elements .logo {
+.row_elements a .logo {
     height: 64px;
     transform: translateX(50px);
     width: fit-content;
@@ -206,7 +206,7 @@ li .active .dropList .dropDow {
         background: var(--bgColor1);
     }
 
-    .logo {
+    .row_elements > a{
         position: absolute;
         height: 54px;
         right: 50%;
@@ -222,7 +222,6 @@ li .active .dropList .dropDow {
         flex-direction: column;
         align-items: start;
         justify-content: start;
-        padding-left: 7%;
     }
 
     #navBar .headerList li {

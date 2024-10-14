@@ -28,7 +28,7 @@ function Foots() {
                     </div>
                     <div class="element">
                         <div class="footer_text"><FaEnvelope class="foot_icon"/></div>
-                        <div class="footer_text"><a href="mailto:info@gloverbrotherslandscaping.com">Mail us</a></div>
+                        <div class="footer_text"><a href="mailto:info@gloverbrotherslandscaping.com">Email</a></div>
                     </div>
                 </div>
                 <div class="footer_column">

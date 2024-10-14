@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
-import HTTPManager from '../HTTPManager.js'
+import HTTPManager from '../HTTPManager.js';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import Foots from '../components/Footer';
-import ModalView from '../components/Modal';
+
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { FaArrowUp } from "react-icons/fa";
 import { FaHouzz } from "react-icons/fa";
-import Loader from '../components/Loader';
 import '../styles/Residential.css';
 
 const httpManager = new HTTPManager();
@@ -13,14 +19,18 @@ const getIllustrations = function (data) {
     Object.values(data).forEach((item) => {
         final = [...final, ...(item.illustrations)];
     });
-    return final;
+    return final.map((item) => (
+        {
+            src: item,
+            alt: "Glover Brothers Images"
+        }
+    ));
 }
 function ResidentialPage() {
     const [data, setData] = useState([]);
-    const [modalOpened, setModalOpen] = useState(false);
-    const [modalImg, setModal] = useState("");
     const [showUpButton, setUpButton] = useState(false);
-
+    const [index, setIdenx] = useState(-1);
+    
     const fetchData = async () => {
         try {
             const items = await httpManager.getProducts('residentials/');
@@ -40,10 +50,6 @@ function ResidentialPage() {
             }
         })
     }, []);
-    const handleClick = (imgSrc) => {
-        setModal(imgSrc);
-        setModalOpen(true);
-    }
     const scrollUp = () => {
         window.scrollTo({
             top: 0,
@@ -61,30 +67,38 @@ function ResidentialPage() {
                     <h2>Projects</h2>
                 </div>
                 <div class="paragraphs">
-                    We drag structure and beauty out of the natural world,
-                    inspired by nature but forged to create usable outdoor spaces.
+                    From Concept to Creation, We Bring Your Dream
+                    Yard to Life with Care and Precision. Experience the Joy of
+                    Watching Your Vision Blossom Right Before Your Eyes.
                 </div>
                 <div class="line"></div>
             </div>
             <div class="gridContainer">
                 <div class="classGrid">
                     {
-                        data?.map((item) =>
-                            <div key={item?.id} class="imgItem" onClick={() => {handleClick(item) }}>
-                                <img src={item}/>
+                        data?.map((item, index) => 
+                            <div key={item?.id} class="imgItem" onClick={() => { setIdenx(index)}}>
+                                <img src={item.src} alt={ item.alt}/>
                             </div>
+                        
                         )
                     }
                 </div>
-            </div>
-            {
-                modalOpened  && <ModalView src={modalImg} setView={setModalOpen} />
-            }
+            
+                </div>
+            
             {
                 showUpButton && <div class="upContainer">
                     <div class="upButton" onClick={scrollUp}><FaArrowUp /></div>
                     </div>
             }
+            <Lightbox                
+                open={index >= 0}
+                index={index}
+                slides={data}
+                close={() => setIdenx(-1)}
+                plugins={[Fullscreen, Thumbnails, Zoom]}
+             />
             <Foots />
         </div>
     )

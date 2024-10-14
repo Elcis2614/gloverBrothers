@@ -36,23 +36,25 @@
     border-radius: 5px;
     transform: translateY(24px);
 }
-.linkItem {
-    border-bottom: 1px solid #5d6d7e;
-    padding: 12px 12px;
-    cursor: pointer;
-}
-.linkItem:last-child{
-    border-bottom: none;
-}
-.linkItem .Link {
+.maintenance .txtContent .linksBox a {
     text-decoration: none;
     font-size: 1.2em;
     color: #5d6d7e;
 }
+.maintenance .txtContent .linksBox a .linkItem {
+    border-bottom: 1px solid #5d6d7e;
+    padding: 12px 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.maintenance .txtContent .linksBox:last-child {
+    border-bottom: none;
+}
+
 
 @media (hover: hover){
     .linkItem:hover,
-    .linkItem:hover .Link{
+    .linkItem:hover{
         background: #5d6d7e;    
         color: white;
     }

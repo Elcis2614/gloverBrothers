@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import HTTPManager from '../HTTPManager.js'
 import '../styles/Commercial.css';
 import Loader from '../components/Loader';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const httpManager = new HTTPManager();
@@ -35,7 +35,7 @@ function Commercials({ title }) {
                 {
                     Object.values(projects).map((element) => (
                         <div class="card">
-                            <NavLink to={`/gloverBrothers/portofolio/commercials/${element.id}`}>
+                            <Link reloadDocument to={`/commercials/${element.id}`}>
                                 <div class="imgContainer">
                                     <img src={element.profile} />
                                     <div class="cardLink" >See more</div>
@@ -43,7 +43,7 @@ function Commercials({ title }) {
                                 <div class="title">
                                         {element.title}
                                     </div>
-                            </NavLink>
+                            </Link>
                         <div class="caption">{element?.textContent}</div>
                     </div>))
                 }

@@ -1,6 +1,6 @@
 import '../styles/NavBar.css';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { FaAngleDown } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
@@ -33,10 +33,12 @@ const NavBar = function () {
 	function handlePorto() { setPorto(!openPorto); }
 	window.addEventListener("scroll", setScrol);
 	return (
-		<header class={scrolled ? "row_elements scrolled" : "row_elements" }>
-			<div class="logo">
-				<img src="https://static.wixstatic.com/media/e2789b_7266c77da6ff48f6891c783723b66c0b~mv2.png/v1/crop/x_0,y_0,w_450,h_243/fill/w_126,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo.png" />
-			</div>
+		<header class={scrolled ? "row_elements scrolled" : "row_elements"}>
+			<Link reloadDocument to="home">
+				<div class="logo" >
+					<img src="https://static.wixstatic.com/media/e2789b_7266c77da6ff48f6891c783723b66c0b~mv2.png/v1/crop/x_0,y_0,w_450,h_243/fill/w_126,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo.png" />
+				</div>
+			</Link>
 			<div class="controleBtn" onClick={ showNav}>
 				{
 					opened ?  <FaTimes/> : <FaBars/> 
@@ -45,23 +47,23 @@ const NavBar = function () {
 			<div class={opened ? "headerItems opened" : "headerItems closed"}>
 					<nav id="navBar">
 						<ul class="headerList">
-							<li><NavLink to="/gloverBrothers" onClick={ () => {navClicked(false)}}><p>Home</p></NavLink></li>
+							<li><NavLink to="home" onClick={ () => {navClicked(false)}}><p>Home</p></NavLink></li>
 							<li><>
 									<div class={portoClicked ? "dropList activePorto" : "dropList"} >
 										<div class="dropDown" onClick={handlePorto}>
-											<p>Portofolio</p>
+											<p>Projects</p>
 											<FaAngleDown class="icon"/>
 										</div>
 										<div class={openPorto ? "listElements open " : "listElements closed"}>
 										<div class="item" onClick={ () => {navClicked(true)}}>
-												<NavLink to="/gloverBrothers/portofolio/residentials">
+												<NavLink to="residentials">
 													<div class="node"><FaHome class="icons" /></div>
 													<div class="node">Residential</div>
 												</NavLink>
 											</div>
 											<div class="separator"></div>
 											<div class="item" onClick={ () => {navClicked(true)}}>
-												<NavLink to="/gloverBrothers/portofolio/commercials">
+												<NavLink to="commercials">
 													<div class="node"><FaBuilding class="icons" /></div>
 													<div class="node">Commercial</div>
 												</NavLink>
@@ -70,9 +72,9 @@ const NavBar = function () {
 								</div>
 								</>
 							</li>
-							<li><NavLink to="/gloverBrothers/service" onClick={ () => {navClicked(false)}}><p>Services</p></NavLink></li>
-							<li><NavLink to="/gloverBrothers/careers" onClick={ () => {navClicked(false)}}><p>Careers</p></NavLink></li>
-							<li><NavLink to="/gloverBrothers/about" onClick={ () => {navClicked(false)}}><p>About</p></NavLink></li>
+							<li><NavLink to="service" onClick={ () => {navClicked(false)}}><p>Services</p></NavLink></li>
+							<li><NavLink to="careers" onClick={ () => {navClicked(false)}}><p>Careers</p></NavLink></li>
+							<li><NavLink to="about" onClick={ () => {navClicked(false)}}><p>About</p></NavLink></li>
 						</ul>
 					</nav>
 					<div class="contactContainer" onClick={handleContact}>

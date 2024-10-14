@@ -99,7 +99,7 @@
         background: #1B1075;
         color: white;
     }
-    .left .description .btnMore,
+    .left .description a .btnMore,
     .right .description .btnMore:hover {
         background: var(--bgWhite1);
         color: #1B1075;
@@ -174,6 +174,9 @@
     .description {
         width: 85vw;
         align-items: center;
+    }
+    .description a {
+        color: #1B1075;
     }
     .left .description,
     .description h1:first-child,

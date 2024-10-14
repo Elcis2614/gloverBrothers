@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 const availables = [
     {
         title: 'Home Page',
-        link: '/gloverBrothers'
+        link: '/home'
     },
     {
         title: 'Commercial projects',
-        link: '/gloverBrothers/portofolio/commercials'
+        link: '/commercials'
     },
     {
         title: 'Residential projects',
-        link: '/gloverBrothers/portofolio/residentials',
+        link: '/residentials',
     },
 
 ];
@@ -31,9 +31,11 @@ function MaintenancePage() {
                     <div class="linksBox">
                         {
                             availables.map((item) =>
-                                <div class="linkItem">
-                                    <Link to={item.link} class="Link">{item.title}</Link>
-                                </div>
+                                <Link to={item.link}>
+                                    <div class="linkItem">
+                                        {item.title}
+                                    </div>
+                                </Link>
                             )
                         }
                     </div>

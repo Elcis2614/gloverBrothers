@@ -34,7 +34,7 @@ function Stats() {
 		</div>
 		<div class="item">
 			<div class="numb"> + <span> {valueThree} </span></div>
-			<div class="txtContent"> BUSINES<br/>EMPLOYEES </div>
+			<div class="txtContent"> BUSINESS<br/>PARTNERS</div>
 		</div>
 	</div>
 	)
