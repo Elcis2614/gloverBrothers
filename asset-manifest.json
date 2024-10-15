@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/gloverBrothers/static/css/main.90752d95.css",
-    "main.js": "/gloverBrothers/static/js/main.15610821.js",
+    "main.css": "/gloverBrothers/static/css/main.4fe48dee.css",
+    "main.js": "/gloverBrothers/static/js/main.6b06a97a.js",
     "static/media/loader.gif": "/gloverBrothers/static/media/loader.6a3a9ff5e446ac33627d.gif",
     "index.html": "/gloverBrothers/index.html",
-    "main.90752d95.css.map": "/gloverBrothers/static/css/main.90752d95.css.map",
-    "main.15610821.js.map": "/gloverBrothers/static/js/main.15610821.js.map"
+    "main.4fe48dee.css.map": "/gloverBrothers/static/css/main.4fe48dee.css.map",
+    "main.6b06a97a.js.map": "/gloverBrothers/static/js/main.6b06a97a.js.map"
   },
   "entrypoints": [
-    "static/css/main.90752d95.css",
-    "static/js/main.15610821.js"
+    "static/css/main.4fe48dee.css",
+    "static/js/main.6b06a97a.js"
   ]
 }
